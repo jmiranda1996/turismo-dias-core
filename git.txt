@@ -1,0 +1,25 @@
+Descargar GIT
+https://git-scm.com/downloads
+
+Descargarse el repositorio
+git clone <url>
+
+Moverse a la rama dv
+git checkout dev
+
+Guardar cambios en local (luego de terminar de chambear)
+git add .
+git commit -a -m "mi comentario"
+
+Descargar cambios del github
+git push origin dev
+
+Subir cambios al github
+git pull origin dev
+
+
+Crear llaves SSH
+cd ~/.ssh
+ls
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+cat id_rsa.pub
