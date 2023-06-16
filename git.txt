@@ -23,3 +23,8 @@ cd ~/.ssh
 ls
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 cat id_rsa.pub
+
+Configurar correo y nombre de usuario
+git config --global user.email "bob@mail.com"
+git config --global user.name "Bob"
+git config --global --list 

@@ -1,16 +1,18 @@
 #include <iostream>
-#include "user.h"
+#include "domain/entities/Client.h"
+#include "domain/shared/User.h"
 
 using namespace std;
-using namespace td;
+// using namespace td;
 
 int main(int argc, char *argv[]) {
     
     cout << "Turismo Dias Core" << endl;
 
-    domian::shared::User* newUser = new domian::shared::User();
+    tdc::domain::shared::User * newClient = new tdc::domain::entities::Client();
+    newClient->setUsername("Jerson Miranda");
 
-    cout << newUser->getId() << endl;
+    cout << newClient->getUsername() << endl;
 
     cin.get();
 }
