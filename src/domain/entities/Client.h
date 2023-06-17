@@ -9,6 +9,7 @@ using namespace tdc::domain::shared;
 namespace tdc::domain::entities {
     class Client: public User  {
         private:
+            uint points;
             // historial de reservas/viajes
             // puntos acumulados
             // consultas
