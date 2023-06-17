@@ -12,6 +12,7 @@ namespace tdc::domain::shared {
             string address;
             string zipCode;
             string country;
+            string city;
             string firstName;
             string lastName;
             time_t birthday;
@@ -23,23 +24,28 @@ namespace tdc::domain::shared {
                 string _address, 
                 string _zipCode, 
                 string _country, 
+                string _city,
                 string _firstName, 
                 string _lastName,
                 time_t _birthday,
                 char _gender
             );
+
             string getPhoneNumber();
             string getAddress();
             string getZipCode();
             string getCountry();
+            string getCity();
             string getFirstName();
             string getLastName();
             time_t getBirthday();
             char getGender();
+
             void setPhoneNumber(string _phoneNumber);
             void setAddress(string _address);
             void setZipCode(string _zipCode);
             void setCountry(string _country);
+            void setCity(string _city);
             void setFirstName(string _firstName);
             void setLastName(string _lastName);
             void setBirthday(time_t _birthday);
