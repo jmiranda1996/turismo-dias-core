@@ -1,3 +1,6 @@
+#ifndef Agency_H
+#define Agency_H
+
 #include <iostream>
 
 using namespace std;
@@ -32,12 +35,14 @@ namespace tdc::domain::entities {
             string getCity();
             string getTerminalName();
 
-            void setId();
-            void setAddress();
-            void setZipCode();
-            void setCountry();
-            void setPhoneNumber();
-            void setCity();
-            void setTerminalName();
+            void setId(string _id);
+            void setAddress(string _address);
+            void setZipCode(string _zipCode);
+            void setCountry(string _country);
+            void setPhoneNumber(string _phoneNumber);
+            void setCity(string _city);
+            void setTerminalName(string _terminalName);
     };
 };
+
+#endif

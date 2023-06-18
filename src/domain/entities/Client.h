@@ -1,3 +1,6 @@
+#ifndef Client_H
+#define Client_H
+
 #include <iostream>
 #include "../shared/User.h"
 #include "../shared/UserInfo.h"
@@ -25,3 +28,5 @@ namespace tdc::domain::entities {
             );
     };
 };
+
+#endif

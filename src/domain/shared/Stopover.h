@@ -1,3 +1,6 @@
+#ifndef Stopover_H
+#define Stopover_H
+
 #include <iostream>
 
 using namespace std;
@@ -19,3 +22,5 @@ namespace tdc::domain::shared {
             void setCity(string _city);
     };
 };
+
+#endif

@@ -23,8 +23,8 @@ namespace tdc::domain::shared {
             User();
             User(string _documentId, string _username, string _emailAddress, UserInfo* _userInfo = nullptr);
             
-            virtual string getDocumentId(); //{ return this.documentId; }
-            virtual string getUsername(); //{ return this.username; }
+            string getDocumentId(); //{ return this.documentId; }
+            string getUsername(); //{ return this.username; }
             string getEmailAddress(); //{ return this.emailAddress; }
             string getPasswordHash(); //{ return this.passwordHash; }
             string getPasswordSalt(); //{ return this.passwordSalt; }

@@ -1,3 +1,6 @@
+#ifndef Schedule_H
+#define Schedule_H
+
 #include <iostream>
 #include "Bus.h"
 #include "Agency.h"
@@ -57,3 +60,5 @@ namespace tdc::domain::entities {
             void setStopovers(Stopover** _stopovers);
     };
 };
+
+#endif

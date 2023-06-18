@@ -1,3 +1,6 @@
+#ifndef DriverInfo_H
+#define DriverInfo_H
+
 #include <iostream>
 
 using namespace std;
@@ -13,3 +16,5 @@ namespace tdc::domain::entities {
             DriverInfo(string _driverLicense, time_t _issue, time_t _expiration);
     };
 };
+
+#endif

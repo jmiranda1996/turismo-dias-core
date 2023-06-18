@@ -1,3 +1,6 @@
+#ifndef Driver_H
+#define Driver_H
+
 #include <iostream>
 #include "DriverInfo.h"
 #include "../shared/User.h"
@@ -26,3 +29,5 @@ namespace tdc::domain::entities {
             void setDriverInfo(DriverInfo* _driverInfo);
     };
 };
+
+#endif
