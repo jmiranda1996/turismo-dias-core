@@ -23,37 +23,34 @@ int opcion, asiento, cantidad;
 string origen, destino, salida;
 bool disponible = true;
 
-void mostrar_logo(){
+void mostrar_logo() {
 
 }
 
 void informacion_pasajero() {
-    
-    for(int i = 1;i < cantidad; i++){
-      cout << "Pasajero" << i <<": "<<endl; 
-    }
+  for(int i = 1;i < cantidad; i++){
+    cout << "Pasajero" << i <<": "<<endl; 
   }
+}
 
 int main() {
-    
-    //mostrar_logo();
-    
+  //mostrar_logo();
   
-    cout << ANSI_COLOR_YELLOW;
-    cout << ANSI_STYLE_BOLD;
-    cout<<"\t\t\t\t\t\t\t\t RESERVA DE PASAJES \n\n";
-    cout << ANSI_COLOR_RESET;
-    cout << ANSI_COLOR_GREEN; 
-    cout << "*  ORIGEN: ";
-    cin >> origen;
-    cout << "*  DESTINO: ";
-    cin >> destino;
-    cout << "*  FECHA DE SALIDA (DD/MM/AAAA): ";
-    cin >> salida;
-    system("clear");
-    cout << ANSI_COLOR_RESET;
-  
-    cout << ANSI_COLOR_BLUE;
+  cout << ANSI_COLOR_YELLOW;
+  cout << ANSI_STYLE_BOLD;
+  cout<<"\t\t\t\t\t\t\t\t RESERVA DE PASAJES \n\n";
+  cout << ANSI_COLOR_RESET;
+  cout << ANSI_COLOR_GREEN; 
+  cout << "*  ORIGEN: ";
+  cin >> origen;
+  cout << "*  DESTINO: ";
+  cin >> destino;
+  cout << "*  FECHA DE SALIDA (DD/MM/AAAA): ";
+  cin >> salida;
+  system("clear");
+  cout << ANSI_COLOR_RESET;
+
+  cout << ANSI_COLOR_BLUE;
   if(disponible == true){
     cout << "        TIPO    " << " HORA SALIDA   " << "  HORA LLEGADA    " << "  TIEMPO    " << "   COSTO    "<<endl;
     cout << " 1. "<<endl;
@@ -66,26 +63,26 @@ int main() {
   cout << ANSI_COLOR_MAGENTA;
   switch(opcion){
     case 1:
-    cout << "\t\t\t\t\t\t\t\tASIENTOS DISPONIBLES " << endl;
-    cout << "\nPrimer piso" << endl;
-    cout << " 1 - 13 - 14" << endl;
-    cout << "\nSegundo piso" << endl;
-    cout << " 20 - 33 - 34"<<endl;
-    cout << "Asientos escogidos: ";
-    cin >> asiento;
-    break;
+      cout << "\t\t\t\t\t\t\t\tASIENTOS DISPONIBLES " << endl;
+      cout << "\nPrimer piso" << endl;
+      cout << " 1 - 13 - 14" << endl;
+      cout << "\nSegundo piso" << endl;
+      cout << " 20 - 33 - 34"<<endl;
+      cout << "Asientos escogidos: ";
+      cin >> asiento;
+      break;
     case 2:
-    cout << "\t\t\t\t\t\t\t\tASIENTOS DISPONIBLES " << endl;
-    cout << "\nPrimer piso" << endl;
-    cout << " 1 - 13 - 14" << endl;
-    cout << "\nSegundo piso" << endl;
-    cout << " 20 - 33 - 34"<<endl;
-    cout << "\nAsientos escogidos: ";
-    cin >> asiento;
-    break;
+      cout << "\t\t\t\t\t\t\t\tASIENTOS DISPONIBLES " << endl;
+      cout << "\nPrimer piso" << endl;
+      cout << " 1 - 13 - 14" << endl;
+      cout << "\nSegundo piso" << endl;
+      cout << " 20 - 33 - 34"<<endl;
+      cout << "\nAsientos escogidos: ";
+      cin >> asiento;
+      break;
     default: 
-    break;
+      break;
   }
-  
-    cin.ignore(); return 0;
+  cin.ignore(); 
+  return 0;
 }
