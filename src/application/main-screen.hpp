@@ -6,10 +6,12 @@
 #define ANSI_COLOR_RESET   "\x1b[0m"
 using namespace std;
 
-class menuPrincipal {
+class MainScreen {
     public:  
-    void Mostrar_menu(){
+    static void Mostrar_menu() {
         int opcion;
+
+        do {
             cout << ANSI_COLOR_YELLOW;
             cout << ANSI_STYLE_BOLD;
             cout << "======= MENÚ PRINCIPAL ========" << endl;
@@ -35,7 +37,7 @@ class menuPrincipal {
             default:
                 break;
             }
+        } while(opcion != 5);
 
     }
-
 };
