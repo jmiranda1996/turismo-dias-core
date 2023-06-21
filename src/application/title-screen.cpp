@@ -18,6 +18,10 @@ void TitleScreen::drawnContent(string content) {
 
 void TitleScreen::render() {
     std::vector<std::string> vec;
+    vec.push_back("___ _  _ ____ _ ____ _  _ ____    ___  _ ____ ____");
+    vec.push_back(" |  |  | |__/ | [__  |\\/| |  |    |  \\ | |__| [__");
+    vec.push_back(" |  |__| |  \\ | ___] |  | |__|    |__/ | |  | ___]");
+    vec.push_back("");
     vec.push_back("Escoge una opcion:");
     vec.push_back("");
     vec.push_back("1. Ingresar como invitado");
