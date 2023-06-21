@@ -10,7 +10,6 @@ class menuPrincipal {
     public:  
     void Mostrar_menu(){
         int opcion;
-        do{
             cout << ANSI_COLOR_YELLOW;
             cout << ANSI_STYLE_BOLD;
             cout << "======= MENÚ PRINCIPAL ========" << endl;
@@ -36,7 +35,6 @@ class menuPrincipal {
             default:
                 break;
             }
-        } while (opcion!=5);
 
     }
 
