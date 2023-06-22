@@ -2,22 +2,23 @@
 #define Client_H
 
 #include <iostream>
+#include "Booking.h"
 #include "../shared/User.h"
 #include "../shared/UserInfo.h"
 #include "../shared/Enums.h"
+#include "../../infraestructure/structures/linked-list.h"
 
 using namespace std;
 using namespace tdc::domain::shared;
+using namespace tdc::infraestructure::structures;
 
 namespace tdc::domain::entities {
     class Client: public User  {
         private:
             uint points;
-            // historial de reservas/viajes
-            // puntos acumulados
+            LinkedList<Booking*>* bookings;
+            ClientType clientType;
             // consultas
-            // tipo de cliente
-            // ...
         public:
             Client();
             Client(

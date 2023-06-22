@@ -16,5 +16,6 @@ namespace tdc::domain::entities {
         UserInfo* _userInfo
     ): User(_documentId, _username, _emailAddress, _userInfo) {
         ::User::userType = ::Client;
+        if (_userInfo == nullptr) clientType = Guest; 
     };
 };

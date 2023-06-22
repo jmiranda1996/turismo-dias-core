@@ -8,6 +8,7 @@ namespace tdc::domain::shared {
     enum BusAmenities { Airco, Toilet, Tablet, WiFi };
     enum BookingStatus { Pending, Paid, Cancelled };
     enum PaymentMethod { Card, Yape, Paypal, Transfer, GiftCard };
+    enum ClientType { Guest, User };
 };
 
 #endif
