@@ -9,6 +9,7 @@ namespace tdc::domain::shared {
     enum BookingStatus { Pending, Paid, Cancelled };
     enum PaymentMethod { Card, Yape, Paypal, Transfer, GiftCard };
     enum ClientType { Guest, User };
+    enum DocumentType { DNI, CarnetExtranjeria, RUC };
 };
 
 #endif

@@ -5,6 +5,7 @@
 namespace tdc::domain::shared {
     User::User() {
         documentId = "";
+        documentType = DNI;
         username = "";
         emailAddress = "";
         passwordHash = "";
@@ -14,8 +15,9 @@ namespace tdc::domain::shared {
         userType = Unknown;
         status = PendingConfirm;
     };
-    User::User(string _documentId, string _username, string _emailAddress, UserInfo* _userInfo) {
+    User::User(string _documentId, DocumentType _documentType, string _username, string _emailAddress, UserInfo* _userInfo) {
         documentId = _documentId;
+        documentType = _documentType;
         username = _username;
         emailAddress = _emailAddress;
         passwordHash = "";
@@ -27,6 +29,7 @@ namespace tdc::domain::shared {
     };
 
     string User::getDocumentId() { return documentId; }
+    DocumentType User::getDocumentType() { return documentType; }
     string User::getUsername() { return username; }
     string User::getEmailAddress() { return emailAddress; }
     string User::getPasswordHash() { return passwordHash; }
@@ -36,6 +39,7 @@ namespace tdc::domain::shared {
     UserStatus User::getStatus() { return status; }
 
     void User::setDocumentId(string _documentId) { documentId = _documentId; };
+    void User::setDocumentType(DocumentType _documentType) { documentType = _documentType; };
     void User::setUsername(string _username) { username = _username; };
     void User::setEmailAddress(string _emailAddress) { emailAddress = _emailAddress; };
     void User::setPasswordHash(string _passwordHash) { passwordHash = _passwordHash; };

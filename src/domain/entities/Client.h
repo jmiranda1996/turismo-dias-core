@@ -2,7 +2,6 @@
 #define Client_H
 
 #include <iostream>
-#include "Booking.h"
 #include "../shared/User.h"
 #include "../shared/UserInfo.h"
 #include "../shared/Enums.h"
@@ -16,13 +15,12 @@ namespace tdc::domain::entities {
     class Client: public User  {
         private:
             uint points;
-            LinkedList<Booking*>* bookings;
             ClientType clientType;
-            // consultas
         public:
             Client();
             Client(
                 string _documentId, 
+                DocumentType _documentType,
                 string _username, 
                 string _emailAddress, 
                 UserInfo* _userInfo = nullptr

@@ -11,6 +11,7 @@ namespace tdc::domain::shared {
     class User {
         protected:
             string documentId;
+            DocumentType documentType;
             string username;
             string emailAddress;
             string passwordHash;
@@ -21,9 +22,10 @@ namespace tdc::domain::shared {
             UserStatus status;
         public:
             User();
-            User(string _documentId, string _username, string _emailAddress, UserInfo* _userInfo = nullptr);
+            User(string _documentId, DocumentType _documentType, string _username, string _emailAddress, UserInfo* _userInfo = nullptr);
             
             string getDocumentId(); //{ return this.documentId; }
+            DocumentType getDocumentType();
             string getUsername(); //{ return this.username; }
             string getEmailAddress(); //{ return this.emailAddress; }
             string getPasswordHash(); //{ return this.passwordHash; }
@@ -33,6 +35,7 @@ namespace tdc::domain::shared {
             UserStatus getStatus();// { return this.status; }
             
             void setDocumentId(string _documentId);
+            void setDocumentType(DocumentType _documentType);
             void setUsername(string _username);
             void setEmailAddress(string _emailAddress);
             void setPasswordHash(string _passwordHash);

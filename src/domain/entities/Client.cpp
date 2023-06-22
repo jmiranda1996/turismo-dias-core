@@ -10,11 +10,12 @@ using namespace tdc::domain::shared;
 namespace tdc::domain::entities {
     Client::Client(): User() { };
     Client::Client(
-        string _documentId, 
+        string _documentId,
+        DocumentType _documentType,
         string _username, 
         string _emailAddress, 
         UserInfo* _userInfo
-    ): User(_documentId, _username, _emailAddress, _userInfo) {
+    ): User(_documentId, _documentType, _username, _emailAddress, _userInfo) {
         ::User::userType = ::Client;
         if (_userInfo == nullptr) clientType = Guest; 
     };

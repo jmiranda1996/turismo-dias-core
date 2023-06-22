@@ -21,21 +21,21 @@ namespace tdc::infraestructure::structures {
     private:
         Node<T>* cabeza;
         Node<T>* cola;
-        int tamaño;
+        int length;
 
     public:
         LinkedList() {
             cabeza = nullptr;
             cola = nullptr;
-            tamaño = 0;
+            length = 0;
         }
 
         bool estaVacia() {
             return (cabeza == nullptr);
         }
 
-        int obtenerTamaño() {
-            return tamaño;
+        int obtenerlength() {
+            return length;
         }
 
         void insertarAlInicio(T valor) {
@@ -49,7 +49,7 @@ namespace tdc::infraestructure::structures {
                 cabeza->anterior = nuevoNode;
                 cabeza = nuevoNode;
             }
-            tamaño++;
+            length++;
         }
 
         void insertarAlFinal(T valor) {
@@ -63,7 +63,7 @@ namespace tdc::infraestructure::structures {
                 nuevoNode->anterior = cola;
                 cola = nuevoNode;
             }
-            tamaño++;
+            length++;
         }
 
         void mostrarLista() {
@@ -79,7 +79,7 @@ namespace tdc::infraestructure::structures {
             cout << endl;
         }
         T obtenerDatoEnPosicion(int posicion) {
-            if (posicion < 0 || posicion >= tamaño) {
+            if (posicion < 0 || posicion >= length) {
                 throw out_of_range("Posición inválida");
             }
             Node<T>* nodoActual = cabeza;

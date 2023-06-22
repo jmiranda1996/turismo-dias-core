@@ -18,6 +18,7 @@ namespace tdc::domain::entities {
             Driver();
             Driver(
                 string _documentId, 
+                DocumentType _documentType,
                 string _username, 
                 string _emailAddress, 
                 DriverInfo* _driverInfo = nullptr, 

@@ -18,8 +18,8 @@ namespace tdc::domain::entities {
             uint8_t passengers;
             uint8_t* seats;
             // passengers info
-            // bookingDate
-            // cancelledDate
+            time_t bookingDate;
+            time_t cancelledDate;
             BookingPayInfo* bookingPayInfo;
             BookingStatus status;
         public:
@@ -29,6 +29,8 @@ namespace tdc::domain::entities {
                 Schedule* _schedule, 
                 uint8_t _passengers, 
                 uint8_t* _seats,
+                time_t _bookingDate,
+                time_t _cancelledDate,
                 BookingPayInfo* _bookingPayInfo,
                 BookingStatus _status = Pending
             );
@@ -37,6 +39,8 @@ namespace tdc::domain::entities {
             Schedule* getSchedule();
             uint8_t getPassengers();
             uint8_t* getSeats();
+            time_t getBookingDate();
+            time_t getCancelledDate();
             BookingPayInfo* getBookingPayInfo();
             BookingStatus getStatus();
 
@@ -44,9 +48,11 @@ namespace tdc::domain::entities {
             void setSchedule(Schedule* _schedule);
             void setPassengers(uint8_t _passengers);
             void setSeats(uint8_t* _seats);
+            void setBookingDate(time_t _bookingDate);
+            void setCancelledDate(time_t _cancelledDate);
             void setBookingPayInfo(BookingPayInfo* _bookingPayInfo);
             void setStatus(BookingStatus _status);
     };
-};
+}
 
 #endif

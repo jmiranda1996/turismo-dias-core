@@ -14,6 +14,8 @@ namespace tdc::domain::entities {
         Schedule* schedule = nullptr;
         uint8_t passengers = 0;
         uint8_t* seats = nullptr;
+        bookingDate = time(0);
+        // cancelledDate = nullptr;
         BookingPayInfo* bookingPayInfo = nullptr;
         BookingStatus status = Pending;
     };
@@ -22,6 +24,8 @@ namespace tdc::domain::entities {
         Schedule* _schedule, 
         uint8_t _passengers, 
         uint8_t* _seats,
+        time_t _bookingDate,
+        time_t _cancelledDate,
         BookingPayInfo* _bookingPayInfo,
         BookingStatus _status
     ) {
@@ -29,6 +33,8 @@ namespace tdc::domain::entities {
         schedule = _schedule;
         passengers = _passengers;
         seats = _seats;
+        bookingDate = _bookingDate;
+        // cancelledDate = _cancelledDate;
         bookingPayInfo = _bookingPayInfo;
         status = _status;
     };
