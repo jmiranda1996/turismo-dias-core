@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Client.h"
+#include "Passenger.h"
 #include "../shared/User.h"
 #include "../shared/UserInfo.h"
 #include "../shared/Enums.h"
@@ -8,21 +8,14 @@ using namespace std;
 using namespace tdc::domain::shared;
 
 namespace tdc::domain::entities {
-    Client::Client(): User() { };
-    Client::Client(
+    Passenger::Passenger(): User() { };
+    Passenger::Passenger(
         string _documentId,
         DocumentType _documentType,
         string _username, 
         string _emailAddress, 
         UserInfo* _userInfo
     ): User(_documentId, _documentType, _username, _emailAddress, _userInfo) {
-        ::User::userType = ::Client;
-        if (_userInfo == nullptr) clientType = Guest; 
+        ::User::userType = ::Unknown;
     };
-
-    uint Client::getPoints() { return points; };
-    ClientType Client::getClientType() { return clientType; };
-
-    void Client::setPoints(uint _points) { points = _points; };
-    void Client::setClientType(ClientType _clientType) { clientType = _clientType; }
 };
