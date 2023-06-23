@@ -1,0 +1,1 @@
+g++ -g $(find ./src -type f -iregex ".*\.cpp") -o program.exe -std=c++17

@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "domain/entities/Client.h"
 #include "domain/shared/User.h"
-#include "signUp.hpp"
+//#include "signUp.hpp"
 
 #define ANSI_COLOR_RED     "\x1b[31m"
 #define ANSI_COLOR_GREEN   "\x1b[32m"
