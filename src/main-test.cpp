@@ -28,3 +28,16 @@ using namespace tdc;
 
 //     cin.get();
 // }
+
+/*
+ ClientRepository* _repository = new ClientRepository();
+  entities::Client* _client = new entities::Client();
+  _client->setDocumentId("232323");
+  _repository->insertOrUpdate(_client);
+
+  entities::Client _client2 = *_repository->get(303);
+  _client->setEmailAddress("bob@mail.com");
+  _client2.setEmailAddress("alice@mail.com");
+  std::cout << _client->getEmailAddress() << endl;
+  std::cout << _client2.getEmailAddress() << endl;
+*/
