@@ -13,7 +13,7 @@ string tiempoToString(time_t tiempo) {
     tiempoinfo = localtime(&tiempo);
     
     // darle el formato
-    strftime(buffer, sizeof(buffer), "%Y-%m-%d", tiempoinfo);
+    strftime(buffer, sizeof(buffer), "%d/%m/%Y", tiempoinfo);
 
     // crear el string apartir del buffer.
     string tiempostring(buffer);
