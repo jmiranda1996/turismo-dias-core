@@ -1,7 +1,7 @@
 #include <iostream>
 #include "ClientRepository.h"
 #include "../structures/HashTable.h"
-#include "../common/utils.hpp"
+#include "../common/Utils.h"
 #include "../../domain/entities/Client.h"
  
 using namespace std;
@@ -9,18 +9,21 @@ using namespace tdc::domain::shared;
 using namespace tdc::infraestructure::structures;
 
 namespace tdc::infraestructure::repository {
-    ClientRepository::ClientRepository() {
-        // HashTable<int>* a = new HashTable<int>(40);
-        clients = new structures::HashTable<entities::Client>(50000);
+    ClientRepository* ClientRepository::singleton= nullptr;
+    
+    ClientRepository* ClientRepository::GetInstance() {
+        if(singleton == nullptr){
+            singleton = new ClientRepository();
+        }
+        return singleton;
     }
 
-    entities::Client* ClientRepository::get(uint key) {
-        return clients->get(key);
+    entities::Client ClientRepository::get(uint key) {
+        return *clients->get(key);
     }
 
     void ClientRepository::insertOrUpdate(entities::Client* newEntity) {
-        uint newKey = hashFunction(newEntity->getDocumentId(), clients->getMaxSize());
-        cout << "New Key: " << newKey << endl;
+        uint newKey = Utils::hashFunction(newEntity->getDocumentId(), clients->getMaxSize());
         clients->insert(newKey, newEntity);
     }
 

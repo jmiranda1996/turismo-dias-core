@@ -2,6 +2,7 @@
 #include "HashTableItem.h"
 
 #include "../../domain/entities/Client.h"
+#include "../../domain/entities/ContactForm.h"
 
 using namespace std;
 
@@ -39,4 +40,5 @@ namespace tdc::infraestructure::structures {
     }
     
     template class HashTableItem<tdc::domain::entities::Client>;
+    template class HashTableItem<tdc::domain::entities::ContactForm>;
 }

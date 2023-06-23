@@ -1,5 +1,5 @@
 #include <iostream>
-#include<unistd.h>
+#include <unistd.h>
 #include <string>
 #include <vector>
 #include <iomanip>
@@ -22,9 +22,9 @@ void TitleScreen::drawnContent(string content) {
 
 void TitleScreen::render() {
     vector<string> vec;
-    vec.push_back(" ___ _  _ ____   _  ____ _  _  ____    ___   _ ____ ____ ");
+    vec.push_back(" ___ _  _ ____   _  ____ _  _ ____    ___  _ ____ ____ ");
     vec.push_back("  |  |  | |__/   |  [__  |\\/| |  |    |  \\ | |__| [__  ");
-    vec.push_back("  |  |__| |  \\  |  ___] |   | |__|    |__/  | |  | ___] ");
+    vec.push_back("  |  |__| |  \\   |  ___] |  | |__|    |__/ | |  | ___] ");
     vec.push_back("");
     vec.push_back("");
     vec.push_back("1. Ingresar como invitado");

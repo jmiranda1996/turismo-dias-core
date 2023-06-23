@@ -3,6 +3,7 @@
 #include "HashTableItem.h"
 
 #include "../../domain/entities/Client.h"
+#include "../../domain/entities/ContactForm.h"
 
 using namespace std;
 
@@ -22,13 +23,16 @@ namespace tdc::infraestructure::structures {
 
     template <typename T>
     T* HashTable<T>::get(uint key) {
-        return items[key]->getValue();
+        if (items[key] != nullptr)
+            return items[key]->getValue();
+        return nullptr;
     }
 
     template <typename T>
     void HashTable<T>::insert(uint key, T* newItem) {
         HashTableItem<T>* newHashTableItem = new HashTableItem<T>(key, newItem);
         items[key] = newHashTableItem;
+        size++;
     }
 
     template <typename T>
@@ -49,4 +53,5 @@ namespace tdc::infraestructure::structures {
     }
     
     template class HashTable<tdc::domain::entities::Client>;
+    template class HashTable<tdc::domain::entities::ContactForm>;
 };
