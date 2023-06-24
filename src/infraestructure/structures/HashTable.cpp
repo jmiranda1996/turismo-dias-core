@@ -30,8 +30,9 @@ namespace tdc::infraestructure::structures {
 
     template <typename T>
     T* HashTable<T>::get(uint key) {
-        if (items[key] != nullptr)
+        if (items[key] != nullptr) {
             return items[key]->getValue();
+        }
         return nullptr;
     }
 

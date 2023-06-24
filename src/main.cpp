@@ -9,8 +9,9 @@ using namespace std;
 using namespace tdc::infraestructure;
 
 int main() {
+  common::DataManager::loadAdmin("./resources/admin-dummy.csv");
   common::DataManager::loadAgencies("./resources/agency-dummy.csv");
-  common::DataManager::loadAgencies("./resources/contact-form-dummy.csv");
+  common::DataManager::loadContactForm("./resources/contact-form-dummy.csv");
 
   TitleScreen::load();
   
