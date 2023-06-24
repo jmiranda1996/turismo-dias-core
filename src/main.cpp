@@ -3,31 +3,17 @@
 #include <stdlib.h>
 
 #include "./application/title-screen.h"
+#include "./infraestructure/common/DataManager.h"
 
 using namespace std;
-
-#define ANSI_COLOR_RED     "\x1b[31m"
-#define ANSI_COLOR_GREEN   "\x1b[32m"
-#define ANSI_COLOR_YELLOW  "\x1b[33m"
-#define ANSI_COLOR_BLUE    "\x1b[34m"
-#define ANSI_COLOR_MAGENTA "\x1b[35m"
-#define ANSI_COLOR_CYAN    "\x1b[36m"
-#define ANSI_STYLE_BOLD    "\x1b[1m"
-#define ANSI_COLOR_RESET   "\x1b[0m"
-
-void mostrar_logo();
-void mostrar_lista_buses_();
-void informacion_pasajero();
-
-int opcion, asiento, cantidad;
-string origen, destino, salida;
-bool disponible = true;
+using namespace tdc::infraestructure;
 
 int main() {
-    
+  common::DataManager::loadAgencies("./resources/agency-dummy.csv");
+  common::DataManager::loadAgencies("./resources/contact-form-dummy.csv");
 
   TitleScreen::load();
   
-    cin.ignore(); 
-    return 0;
+  cin.ignore(); 
+  return 0;
 }

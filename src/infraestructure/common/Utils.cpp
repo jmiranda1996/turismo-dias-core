@@ -12,3 +12,15 @@ uint Utils::hashFunction(string uuid, uint size)
 
     return sum % size;
 }
+
+// referencia: https://cplusplus.com/reference/ctime/strftime/
+string Utils::timeToString(time_t time)
+{
+    struct tm* tiempoinfo;
+    char buffer[80];
+    tiempoinfo = localtime(&time);
+    strftime(buffer, sizeof(buffer), "%d/%m/%Y", tiempoinfo);
+    string tiempostring(buffer);
+
+    return tiempostring;
+}
