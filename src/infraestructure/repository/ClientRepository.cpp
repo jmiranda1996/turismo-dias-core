@@ -5,7 +5,7 @@
 #include "../../domain/entities/Client.h"
  
 using namespace std;
-using namespace tdc::domain::shared;
+using namespace tdc::domain;
 using namespace tdc::infraestructure::structures;
 
 namespace tdc::infraestructure::repository {
@@ -16,6 +16,18 @@ namespace tdc::infraestructure::repository {
             singleton = new ClientRepository();
         }
         return singleton;
+    }
+
+    LinkedList<entities::Client> ClientRepository::getAll() {
+        int maxSize = clients->getMaxSize();
+        LinkedList<entities::Client> list;
+        for (uint i = 0; i < maxSize; i++)
+        {
+            entities::Client* client = clients->get(i);
+            if (clients != nullptr)
+                list.insert(*client);
+        }
+        return list;
     }
 
     entities::Client ClientRepository::get(uint key) {

@@ -2,8 +2,15 @@
 #include "HashTable.h"
 #include "HashTableItem.h"
 
+#include "../../domain/entities/Admin.h"
+#include "../../domain/entities/Agency.h"
+#include "../../domain/entities/Booking.h"
+#include "../../domain/entities/Bus.h"
 #include "../../domain/entities/Client.h"
 #include "../../domain/entities/ContactForm.h"
+#include "../../domain/entities/Driver.h"
+#include "../../domain/entities/Passenger.h"
+#include "../../domain/entities/Schedule.h"
 
 using namespace std;
 
@@ -52,6 +59,13 @@ namespace tdc::infraestructure::structures {
         return maxSize;
     }
     
+    template class HashTable<tdc::domain::entities::Admin>;
+    template class HashTable<tdc::domain::entities::Agency>;
+    template class HashTable<tdc::domain::entities::Booking>;
+    template class HashTable<tdc::domain::entities::Bus>;
     template class HashTable<tdc::domain::entities::Client>;
     template class HashTable<tdc::domain::entities::ContactForm>;
+    template class HashTable<tdc::domain::entities::Driver>;
+    template class HashTable<tdc::domain::entities::Passenger>;
+    template class HashTable<tdc::domain::entities::Schedule>;
 };

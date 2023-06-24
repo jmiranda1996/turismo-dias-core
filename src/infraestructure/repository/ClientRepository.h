@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "../structures/HashTable.h"
+#include "../structures/LinkedList.h"
 #include "../../domain/interfaces/GenericInterface.h"
 #include "../../domain/entities/Client.h"
  
@@ -24,6 +25,7 @@ namespace tdc::infraestructure::repository {
             void operator=(const ClientRepository &) = delete;
             static ClientRepository *GetInstance();
             
+            LinkedList<entities::Client> getAll();
             entities::Client get(uint key);
             void insertOrUpdate(entities::Client* newEntity);
             void remove(uint key);

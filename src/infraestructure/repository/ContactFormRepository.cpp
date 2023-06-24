@@ -6,7 +6,7 @@
 #include "../../domain/entities/ContactForm.h"
  
 using namespace std;
-using namespace tdc::domain::shared;
+using namespace tdc::domain;
 using namespace tdc::infraestructure::structures;
 
 namespace tdc::infraestructure::repository {

@@ -14,6 +14,7 @@ using namespace tdc::domain::shared;
 namespace tdc::domain::entities {
     class Booking {
         private:
+            string id;
             Client* client;
             Schedule* schedule;
             uint8_t passengers;
@@ -26,6 +27,7 @@ namespace tdc::domain::entities {
         public:
             Booking();
             Booking(
+                string _id,
                 Client* _client, 
                 Schedule* _schedule, 
                 uint8_t _passengers, 
@@ -36,6 +38,7 @@ namespace tdc::domain::entities {
                 BookingStatus _status = Pending
             );
 
+            string getId();
             Client* getClient();
             Schedule* getSchedule();
             uint8_t getPassengers();
@@ -46,6 +49,7 @@ namespace tdc::domain::entities {
             BookingPayInfo* getBookingPayInfo();
             BookingStatus getStatus();
 
+            void setId(string _id);
             void setClient(Client* _client);
             void setSchedule(Schedule* _schedule);
             void setPassengers(uint8_t _passengers);

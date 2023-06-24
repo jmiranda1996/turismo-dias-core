@@ -20,6 +20,7 @@ namespace tdc::domain::entities {
         BookingStatus status = Pending;
     };
     Booking::Booking(
+        string _id,
         Client* _client, 
         Schedule* _schedule, 
         uint8_t _passengers, 
@@ -29,6 +30,7 @@ namespace tdc::domain::entities {
         BookingPayInfo* _bookingPayInfo,
         BookingStatus _status
     ) {
+        id = _id;
         client = _client;
         schedule = _schedule;
         passengers = _passengers;
@@ -41,6 +43,7 @@ namespace tdc::domain::entities {
     };
 
 
+    string Booking::getId() { return id; };
     Client* Booking::getClient() { return client; };
     Schedule* Booking::getSchedule() { return schedule; };
     uint8_t Booking::getPassengers() { return passengers; };
@@ -51,6 +54,7 @@ namespace tdc::domain::entities {
     BookingPayInfo* Booking::getBookingPayInfo() { return bookingPayInfo; };
     BookingStatus Booking::getStatus() { return status; };
 
+    void Booking::setId(string _id) { id = _id; };
     void Booking::setClient(Client* _client) { client = _client; };
     void Booking::setSchedule(Schedule* _schedule) { schedule = _schedule; };
     void Booking::setPassengers(uint8_t _passengers) { passengers = _passengers; };
