@@ -46,8 +46,19 @@ void SignInScreen::render() {
         bool validHash = Utils::validatePassword(password, client.getPasswordHash());
         if (client.getUsername() == username && validHash) {
             Global::isLogin = true;
-            Client client = clients.elementAt(i);
-            Global::client = &client;
+            Client _client = clients.elementAt(i);
+            Client* client = new Client();
+            client->setClientType(_client.getClientType());
+            client->setCreatedDate(_client.getCreatedDate());
+            client->setDocumentId(_client.getDocumentId());
+            client->setDocumentType(_client.getDocumentType());
+            client->setEmailAddress(_client.getEmailAddress());
+            client->setPasswordHash(_client.getPasswordHash());
+            client->setPoints(_client.getPoints());
+            client->setStatus(_client.getStatus());
+            client->setUserInfo(_client.getUserInfo());
+            client->setUsername(_client.getUsername());
+            Global::client = client;
         }
     }
     

@@ -3,6 +3,7 @@
 #include <string>
 #include <time.h>
 #include <cstring>
+#include "Global.h"
 #include "Colors.h"
 #include "BookingScreen.h"
 #include "../domain/entities/Booking.h"
@@ -133,6 +134,10 @@ void BookingScreen::render() {
     newBooking->setBookingPayInfo(new BookingPayInfo(
         total, total - (total * 0.18), total * 0.18, time(0), 0
     ));
+    if (Global::isLogin) {
+        Global::client->setPoints(Global::client->getPoints() + 1);
+        newBooking->setClient(Global::client);
+    }
     BookingRepository* repository = BookingRepository::GetInstance();
     repository->insertOrUpdate(newBooking);
 
