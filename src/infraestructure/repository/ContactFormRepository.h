@@ -1,5 +1,5 @@
-#ifndef ClientRepository_H
-#define ClientRepository_H
+#ifndef ContactFormRepository_H
+#define ContactFormRepository_H
 
 #include <iostream>
 #include "../structures/HashTable.h"

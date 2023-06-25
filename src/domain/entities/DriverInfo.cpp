@@ -14,4 +14,12 @@ namespace tdc::domain::entities {
         issue = _issue;
         expiration = _expiration;
     };
+
+    string DriverInfo::getDriverLicense() { return driverLicense; };
+    time_t DriverInfo::getIssue() { return issue; };
+    time_t DriverInfo::getExpiration() { return expiration; };
+
+    void DriverInfo::setDriverLicense(string _driverLicense) { driverLicense = _driverLicense; };
+    void DriverInfo::setIssue(time_t _issue) { issue = _issue; };
+    void DriverInfo::setExpiration(time_t _expiration) { expiration = _expiration; };
 };

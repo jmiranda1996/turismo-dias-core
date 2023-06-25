@@ -2,6 +2,7 @@
 #define Booking_H
 
 #include <iostream>
+#include <vector>
 #include "Client.h"
 #include "Schedule.h"
 #include "BookingPayInfo.h"
@@ -18,7 +19,7 @@ namespace tdc::domain::entities {
             Client* client;
             Schedule* schedule;
             uint8_t passengers;
-            uint8_t* seats;
+            vector<uint8_t> seats;
             Passenger** passengersInfo;
             time_t bookingDate;
             time_t cancelledDate;
@@ -31,7 +32,7 @@ namespace tdc::domain::entities {
                 Client* _client, 
                 Schedule* _schedule, 
                 uint8_t _passengers, 
-                uint8_t* _seats,
+                vector<uint8_t> _seats,
                 time_t _bookingDate,
                 Passenger** _passengersInfo,
                 BookingPayInfo* _bookingPayInfo,
@@ -42,7 +43,7 @@ namespace tdc::domain::entities {
             Client* getClient();
             Schedule* getSchedule();
             uint8_t getPassengers();
-            uint8_t* getSeats();
+            vector<uint8_t> getSeats();
             time_t getBookingDate();
             time_t getCancelledDate();
             Passenger** getPassengersInfo();
@@ -53,7 +54,7 @@ namespace tdc::domain::entities {
             void setClient(Client* _client);
             void setSchedule(Schedule* _schedule);
             void setPassengers(uint8_t _passengers);
-            void setSeats(uint8_t* _seats);
+            void setSeats(vector<uint8_t> _seats);
             void setBookingDate(time_t _bookingDate);
             void setCancelledDate(time_t _cancelledDate);
             void setPassengersInfo(Passenger** _passengersInfo);

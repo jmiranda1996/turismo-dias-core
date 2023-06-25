@@ -11,7 +11,12 @@ namespace tdc::infraestructure::common {
             static void loadData(string _filename);
             static void loadAdmin(string _filename);
             static void loadAgencies(string _filename);
+            static void loadBooking(string _filename);
+            static void loadBus(string _filename);
+            static void loadClient(string _filename);
             static void loadContactForm(string _filename);
+            static void loadDriver(string _filename);
+            static void loadSchedule(string _filename);
     };
 }
 

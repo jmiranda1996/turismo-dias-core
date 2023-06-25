@@ -13,7 +13,6 @@ namespace tdc::domain::entities {
         Client* client = nullptr;
         Schedule* schedule = nullptr;
         uint8_t passengers = 0;
-        uint8_t* seats = nullptr;
         bookingDate = time(0);
         cancelledDate = time(NULL);
         BookingPayInfo* bookingPayInfo = nullptr;
@@ -24,7 +23,7 @@ namespace tdc::domain::entities {
         Client* _client, 
         Schedule* _schedule, 
         uint8_t _passengers, 
-        uint8_t* _seats,
+        vector<uint8_t> _seats,
         time_t _bookingDate,
         Passenger** _passengersInfo,
         BookingPayInfo* _bookingPayInfo,
@@ -47,7 +46,7 @@ namespace tdc::domain::entities {
     Client* Booking::getClient() { return client; };
     Schedule* Booking::getSchedule() { return schedule; };
     uint8_t Booking::getPassengers() { return passengers; };
-    uint8_t* Booking::getSeats() { return seats; };
+    vector<uint8_t> Booking::getSeats() { return seats; };
     time_t Booking::getBookingDate() { return bookingDate; };
     time_t Booking::getCancelledDate() { return cancelledDate; };
     Passenger** Booking::getPassengersInfo() { return passengersInfo; };
@@ -58,7 +57,7 @@ namespace tdc::domain::entities {
     void Booking::setClient(Client* _client) { client = _client; };
     void Booking::setSchedule(Schedule* _schedule) { schedule = _schedule; };
     void Booking::setPassengers(uint8_t _passengers) { passengers = _passengers; };
-    void Booking::setSeats(uint8_t* _seats) { seats = _seats; };
+    void Booking::setSeats(vector<uint8_t> _seats) { seats = _seats; };
     void Booking::setBookingDate(time_t _bookingDate) { bookingDate = _bookingDate; };
     void Booking::setCancelledDate(time_t _cancelledDate) { cancelledDate = _cancelledDate; };
     void Booking::setPassengersInfo(Passenger** _passengersInfo) { passengersInfo = _passengersInfo; };
