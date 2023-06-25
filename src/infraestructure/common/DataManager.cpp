@@ -137,13 +137,13 @@ namespace tdc::infraestructure::common {
                 Schedule* schedule = new Schedule();
                 BookingPayInfo* bookingPayInfo = new BookingPayInfo();
                 stringstream str(line);
-                uint key;
+                int key;
                 while(getline(str, word, ',')) {
                     switch (i)
                     {
                         case 0: entity->setId(word); break;
                         case 1: {
-                            uint key = Utils::hashFunction(word, 50000);
+                            int key = Utils::hashFunction(word, 50000);
                             entities::Client _client = clientRepostory->get(key);
                             client->setClientType(_client.getClientType());
                             client->setCreatedDate(_client.getCreatedDate());
@@ -160,7 +160,7 @@ namespace tdc::infraestructure::common {
                             break;
                         };
                         case 2: {
-                            uint key = Utils::hashFunction(word, 50000);
+                            int key = Utils::hashFunction(word, 50000);
                             Schedule _schedule = scheduleRepostory->get(key);
                             schedule->setBus(_schedule.getBus());
                             schedule->setDepartureDate(_schedule.getDepartureDate());
@@ -179,17 +179,17 @@ namespace tdc::infraestructure::common {
                         };
                         case 3: entity->setPassengers(stoi(word)); break;
                         case 4: {
-                            vector<uint8_t> seats;
+                            vector<int> seats;
                             seats.push_back(stoi(word));
                             entity->setSeats(seats); 
                             break;
                         }
                         case 5: {
-                            entity->setBookingDate(stol(word)/1000); 
-                            bookingPayInfo->setPaidDate(stol(word)/1000);
+                            entity->setBookingDate(stoull(word)/1000); 
+                            bookingPayInfo->setPaidDate(stoull(word)/1000);
                             break;
                         };
-                        case 6: entity->setCancelledDate(stol(word)/1000); break;
+                        case 6: entity->setCancelledDate(stoull(word)/1000); break;
                         case 7: bookingPayInfo->setTotal(stoi(word)); break;
                         case 8: bookingPayInfo->setBillNumber(stoi(word)); break;
                         default: break;
@@ -197,8 +197,8 @@ namespace tdc::infraestructure::common {
                     i++;
                 }
                 bookingPayInfo->setPaymentMethod(Card);
-                uint tax = bookingPayInfo->getTotal() * 0.18;
-                uint subtotal = bookingPayInfo->getTotal() - tax;
+                int tax = bookingPayInfo->getTotal() * 0.18;
+                int subtotal = bookingPayInfo->getTotal() - tax;
                 bookingPayInfo->setTax(tax);
                 bookingPayInfo->setSubTotal(subtotal);
                 entity->setBookingPayInfo(bookingPayInfo);
@@ -222,14 +222,14 @@ namespace tdc::infraestructure::common {
                 Bus* entity = new Bus();
                 entities::Driver* driver = new entities::Driver();
                 stringstream str(line);
-                uint key;
+                int key;
                 while(getline(str, word, ',')) {
                     switch (i)
                     {
                         case 0: entity->setId(word); break;
                         case 1: entity->setSeats(stoi(word)); break;
                         case 2: {
-                            uint key = Utils::hashFunction(word, 50000);
+                            int key = Utils::hashFunction(word, 50000);
                             entities::Driver _driver = driverRepository->get(key);
                             driver->setCreatedDate(_driver.getCreatedDate());
                             driver->setDocumentId(_driver.getDocumentId());
@@ -269,7 +269,7 @@ namespace tdc::infraestructure::common {
                 int i = 0;
                 Client* entity = new Client();
                 stringstream str(line);
-                uint key;
+                int key;
                 while(getline(str, word, ',')) {
                     switch (i)
                     {
@@ -279,7 +279,7 @@ namespace tdc::infraestructure::common {
                         case 3: entity->setEmailAddress(word); break;
                         case 4: entity->setPasswordHash(word); break;
                         case 5: entity->setCreatedDate(time(0)); break;
-                        case 6: entity->setPoints(uint(stoi(word))); break;
+                        case 6: entity->setPoints(int(stoi(word))); break;
                         default: break;
                     }
                     i++;
@@ -307,7 +307,7 @@ namespace tdc::infraestructure::common {
                 ContactForm* entity = new ContactForm();
                 Agency* agency = new Agency();
                 stringstream str(line);
-                uint key;
+                int key;
                 while(getline(str, word, ',')) {
                     switch (i)
                     {
@@ -359,7 +359,7 @@ namespace tdc::infraestructure::common {
                 entities::Driver* entity = new entities::Driver();
                 entities::DriverInfo* entityInfo = new entities::DriverInfo();
                 stringstream str(line);
-                uint key;
+                int key;
                 while(getline(str, word, ',')) {
                     switch (i)
                     {
@@ -368,10 +368,10 @@ namespace tdc::infraestructure::common {
                         case 2: entity->setUsername(word); break;
                         case 3: entity->setEmailAddress(word); break;
                         case 4: entity->setPasswordHash(word); break;
-                        case 5: entity->setCreatedDate(stoul(word)); break;
+                        case 5: entity->setCreatedDate(stoull(word)/1000); break;
                         case 6: entityInfo->setDriverLicense(word); break;
-                        case 7: entityInfo->setIssue(stoul(word)); break;
-                        case 8: entityInfo->setExpiration(stoul(word)); break;
+                        case 7: entityInfo->setIssue(stoull(word)/1000); break;
+                        case 8: entityInfo->setExpiration(stoull(word)/1000); break;
                         default: break;
                     }
                     i++;
@@ -400,18 +400,18 @@ namespace tdc::infraestructure::common {
                 Agency* inbound = new Agency();
                 Agency* outbound = new Agency();
                 stringstream str(line);
-                uint key;
+                int key;
                 while(getline(str, word, ',')) {
                     switch (i)
                     {
                         case 0: entity->setId(word); break;
                         case 1: entity->setFrom(word); break;
                         case 2: entity->setTo(word); break;
-                        case 3: entity->setDepartureDate(stol(word)/1000); break;
-                        case 4: entity->setReturnDate(stol(word)/1000); break;
+                        case 3: entity->setDepartureDate(stoull(word)/1000); break;
+                        case 4: entity->setReturnDate(stoull(word)/1000); break;
                         case 5: entity->setPrice(stoi(word)); break;
                         case 6: {
-                            uint key = Utils::hashFunction(word, 50000);
+                            int key = Utils::hashFunction(word, 50000);
                             Bus _bus = busRepository->get(key);
                             bus->setAmenities(_bus.getAmenities());
                             bus->setDriver(_bus.getDriver());
@@ -423,7 +423,7 @@ namespace tdc::infraestructure::common {
                             break;
                         };
                         case 7: {
-                            uint key = Utils::hashFunction(word, 50000);
+                            int key = Utils::hashFunction(word, 50000);
                             Agency _inbound = agencyRepository->get(key);
                             inbound->setAddress(_inbound.getAddress());
                             inbound->setCity(_inbound.getCity());
@@ -437,7 +437,7 @@ namespace tdc::infraestructure::common {
                             break;
                         };
                         case 8: {
-                            uint key = Utils::hashFunction(word, 50000);
+                            int key = Utils::hashFunction(word, 50000);
                             Agency _outbound = agencyRepository->get(key);
                             outbound->setAddress(_outbound.getAddress());
                             outbound->setCity(_outbound.getCity());

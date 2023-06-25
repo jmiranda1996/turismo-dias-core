@@ -22,7 +22,7 @@ namespace tdc::infraestructure::repository {
     LinkedList<entities::Driver> DriverRepository::getAll() {
         int maxSize = drivers->getMaxSize();
         LinkedList<entities::Driver> list;
-        for (uint i = 0; i < maxSize; i++)
+        for (int i = 0; i < maxSize; i++)
         {
             entities::Driver* Driver = drivers->get(i);
             if (Driver != nullptr)
@@ -31,20 +31,20 @@ namespace tdc::infraestructure::repository {
         return list;
     }
 
-    entities::Driver DriverRepository::get(uint key) {
+    entities::Driver DriverRepository::get(int key) {
         return *drivers->get(key);
     }
 
     void DriverRepository::insertOrUpdate(entities::Driver* newEntity) {
-        uint newKey = Utils::hashFunction(newEntity->getDocumentId(), drivers->getMaxSize());
+        int newKey = Utils::hashFunction(newEntity->getDocumentId(), drivers->getMaxSize());
         drivers->insert(newKey, newEntity);
     }
 
-    void DriverRepository::remove(uint key) {
+    void DriverRepository::remove(int key) {
         drivers->remove(key);
     }
 
-    uint DriverRepository::count() {
+    int DriverRepository::count() {
         return drivers->getSize();
     }
 };

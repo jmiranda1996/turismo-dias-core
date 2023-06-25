@@ -26,10 +26,10 @@ namespace tdc::infraestructure::repository {
             static ClientRepository *GetInstance();
             
             LinkedList<entities::Client> getAll();
-            entities::Client get(uint key);
+            entities::Client get(int key);
             void insertOrUpdate(entities::Client* newEntity);
-            void remove(uint key);
-            uint count();
+            void remove(int key);
+            int count();
     };
 };
 

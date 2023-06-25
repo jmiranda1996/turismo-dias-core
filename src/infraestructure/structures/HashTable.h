@@ -10,17 +10,17 @@ namespace tdc::infraestructure::structures {
     template <typename T>
     class HashTable {
         private:
-            uint maxSize;
-            uint size;
+            int maxSize;
+            int size;
             HashTableItem<T>** items;
         public:
-            HashTable(uint _maxSize);
+            HashTable(int _maxSize);
 
-            T* get(uint key);
-            void insert(uint key, T* newItem);
-            void remove(uint key);
-            uint getSize();
-            uint getMaxSize();
+            T* get(int key);
+            void insert(int key, T* newItem);
+            void remove(int key);
+            int getSize();
+            int getMaxSize();
     };
 };
 

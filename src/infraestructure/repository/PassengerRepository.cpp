@@ -22,7 +22,7 @@ namespace tdc::infraestructure::repository {
     LinkedList<entities::Passenger> PassengerRepository::getAll() {
         int maxSize = passengers->getMaxSize();
         LinkedList<entities::Passenger> list;
-        for (uint i = 0; i < maxSize; i++)
+        for (int i = 0; i < maxSize; i++)
         {
             entities::Passenger* Passenger = passengers->get(i);
             if (Passenger != nullptr)
@@ -31,20 +31,20 @@ namespace tdc::infraestructure::repository {
         return list;
     }
 
-    entities::Passenger PassengerRepository::get(uint key) {
+    entities::Passenger PassengerRepository::get(int key) {
         return *passengers->get(key);
     }
 
     void PassengerRepository::insertOrUpdate(entities::Passenger* newEntity) {
-        uint newKey = Utils::hashFunction(newEntity->getDocumentId(), passengers->getMaxSize());
+        int newKey = Utils::hashFunction(newEntity->getDocumentId(), passengers->getMaxSize());
         passengers->insert(newKey, newEntity);
     }
 
-    void PassengerRepository::remove(uint key) {
+    void PassengerRepository::remove(int key) {
         passengers->remove(key);
     }
 
-    uint PassengerRepository::count() {
+    int PassengerRepository::count() {
         return passengers->getSize();
     }
 };

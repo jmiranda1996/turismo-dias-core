@@ -18,8 +18,8 @@ namespace tdc::domain::entities {
             string id;
             Client* client;
             Schedule* schedule;
-            uint8_t passengers;
-            vector<uint8_t> seats;
+            int passengers;
+            vector<int> seats;
             Passenger** passengersInfo;
             time_t bookingDate;
             time_t cancelledDate;
@@ -31,8 +31,8 @@ namespace tdc::domain::entities {
                 string _id,
                 Client* _client, 
                 Schedule* _schedule, 
-                uint8_t _passengers, 
-                vector<uint8_t> _seats,
+                int _passengers, 
+                vector<int> _seats,
                 time_t _bookingDate,
                 Passenger** _passengersInfo,
                 BookingPayInfo* _bookingPayInfo,
@@ -42,8 +42,8 @@ namespace tdc::domain::entities {
             string getId();
             Client* getClient();
             Schedule* getSchedule();
-            uint8_t getPassengers();
-            vector<uint8_t> getSeats();
+            int getPassengers();
+            vector<int> getSeats();
             time_t getBookingDate();
             time_t getCancelledDate();
             Passenger** getPassengersInfo();
@@ -53,8 +53,8 @@ namespace tdc::domain::entities {
             void setId(string _id);
             void setClient(Client* _client);
             void setSchedule(Schedule* _schedule);
-            void setPassengers(uint8_t _passengers);
-            void setSeats(vector<uint8_t> _seats);
+            void setPassengers(int _passengers);
+            void setSeats(vector<int> _seats);
             void setBookingDate(time_t _bookingDate);
             void setCancelledDate(time_t _cancelledDate);
             void setPassengersInfo(Passenger** _passengersInfo);

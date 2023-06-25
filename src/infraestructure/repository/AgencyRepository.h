@@ -26,10 +26,10 @@ namespace tdc::infraestructure::repository {
             static AgencyRepository *GetInstance();
 
             LinkedList<entities::Agency> getAll();
-            entities::Agency get(uint key);
+            entities::Agency get(int key);
             void insertOrUpdate(entities::Agency* newEntity);
-            void remove(uint key);
-            uint count();
+            void remove(int key);
+            int count();
     };
 };
 

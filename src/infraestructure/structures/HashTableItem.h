@@ -5,16 +5,16 @@ namespace tdc::infraestructure::structures {
     template <typename T>
     class HashTableItem {
         private:
-            uint key;
+            int key;
             T* value;
         public:
             HashTableItem();
-            HashTableItem(uint _key, T* _value = nullptr);
+            HashTableItem(int _key, T* _value = nullptr);
 
-            uint getKey();
+            int getKey();
             T* getValue();
 
-            void setKey(uint _key);
+            void setKey(int _key);
             void setValue(T* _value);
     };
 }

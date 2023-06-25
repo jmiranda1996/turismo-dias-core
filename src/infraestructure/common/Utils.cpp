@@ -11,7 +11,7 @@
 
 using namespace std;
 
-uint Utils::hashFunction(string uuid, uint size)
+int Utils::hashFunction(string uuid, int size)
 {
     unsigned long sum = 0;
 

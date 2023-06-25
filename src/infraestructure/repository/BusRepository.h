@@ -26,10 +26,10 @@ namespace tdc::infraestructure::repository {
             static BusRepository *GetInstance();
 
             LinkedList<entities::Bus> getAll();
-            entities::Bus get(uint key);
+            entities::Bus get(int key);
             void insertOrUpdate(entities::Bus* newEntity);
-            void remove(uint key);
-            uint count();
+            void remove(int key);
+            int count();
     };
 };
 

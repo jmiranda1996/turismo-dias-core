@@ -12,7 +12,7 @@ using namespace tdc::domain::shared;
 namespace tdc::domain::entities {
     class Client: public User  {
         private:
-            uint points;
+            int points;
             ClientType clientType;
         public:
             Client();
@@ -24,10 +24,10 @@ namespace tdc::domain::entities {
                 UserInfo* _userInfo = nullptr
             );
 
-            uint getPoints();
+            int getPoints();
             ClientType getClientType();
 
-            void setPoints(uint _points);
+            void setPoints(int _points);
             void setClientType(ClientType _clientType);
     };
 };

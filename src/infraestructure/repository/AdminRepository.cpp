@@ -22,7 +22,7 @@ namespace tdc::infraestructure::repository {
     LinkedList<entities::Admin> AdminRepository::getAll() {
         int maxSize = admins->getMaxSize();
         LinkedList<entities::Admin> list;
-        for (uint i = 0; i < maxSize; i++)
+        for (int i = 0; i < maxSize; i++)
         {
             entities::Admin* admin = admins->get(i);
             if (admin != nullptr)
@@ -31,20 +31,20 @@ namespace tdc::infraestructure::repository {
         return list;
     }
 
-    entities::Admin AdminRepository::get(uint key) {
+    entities::Admin AdminRepository::get(int key) {
         return *admins->get(key);
     }
 
     void AdminRepository::insertOrUpdate(entities::Admin* newEntity) {
-        uint newKey = Utils::hashFunction(newEntity->getDocumentId(), admins->getMaxSize());
+        int newKey = Utils::hashFunction(newEntity->getDocumentId(), admins->getMaxSize());
         admins->insert(newKey, newEntity);
     }
 
-    void AdminRepository::remove(uint key) {
+    void AdminRepository::remove(int key) {
         admins->remove(key);
     }
 
-    uint AdminRepository::count() {
+    int AdminRepository::count() {
         return admins->getSize();
     }
 };

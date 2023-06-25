@@ -22,7 +22,7 @@ namespace tdc::infraestructure::repository {
     LinkedList<entities::Bus> BusRepository::getAll() {
         int maxSize = buses->getMaxSize();
         LinkedList<entities::Bus> list;
-        for (uint i = 0; i < maxSize; i++)
+        for (int i = 0; i < maxSize; i++)
         {
             entities::Bus* Bus = buses->get(i);
             if (Bus != nullptr)
@@ -31,20 +31,20 @@ namespace tdc::infraestructure::repository {
         return list;
     }
 
-    entities::Bus BusRepository::get(uint key) {
+    entities::Bus BusRepository::get(int key) {
         return *buses->get(key);
     }
 
     void BusRepository::insertOrUpdate(entities::Bus* newEntity) {
-        uint newKey = Utils::hashFunction(newEntity->getId(), buses->getMaxSize());
+        int newKey = Utils::hashFunction(newEntity->getId(), buses->getMaxSize());
         buses->insert(newKey, newEntity);
     }
 
-    void BusRepository::remove(uint key) {
+    void BusRepository::remove(int key) {
         buses->remove(key);
     }
 
-    uint BusRepository::count() {
+    int BusRepository::count() {
         return buses->getSize();
     }
 };

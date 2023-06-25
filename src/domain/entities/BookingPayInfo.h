@@ -10,28 +10,28 @@ using namespace tdc::domain::shared;
 namespace tdc::domain::entities {
     class BookingPayInfo {
         private:
-            uint total;
-            uint subTotal;
-            uint tax;
+            int total;
+            int subTotal;
+            int tax;
             time_t paidDate;
-            uint billNumber;
+            int billNumber;
             PaymentMethod paymentMethod;
         public:
             BookingPayInfo();
-            BookingPayInfo(uint _total, uint _subtotal, uint _tax, time_t _paidDate, uint _billNumber, shared::PaymentMethod _paymentMethod = Card);
+            BookingPayInfo(int _total, int _subtotal, int _tax, time_t _paidDate, int _billNumber, shared::PaymentMethod _paymentMethod = Card);
 
-            uint getTotal();
-            uint getSubTotal();
-            uint getTax();
+            int getTotal();
+            int getSubTotal();
+            int getTax();
             time_t getPaidDate();
-            uint getBillNumber();
+            int getBillNumber();
             PaymentMethod getPaymentMethod();
 
-            void setTotal(uint _total);
-            void setSubTotal(uint _subtotal);
-            void setTax(uint _tax);
+            void setTotal(int _total);
+            void setSubTotal(int _subtotal);
+            void setTax(int _tax);
             void setPaidDate(time_t _paidDate);
-            void setBillNumber(uint _billNumber);
+            void setBillNumber(int _billNumber);
             void setPaymentMethod(shared::PaymentMethod _paymentMethod);
     };
 };

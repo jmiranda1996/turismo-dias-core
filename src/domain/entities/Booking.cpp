@@ -12,7 +12,7 @@ namespace tdc::domain::entities {
     Booking::Booking() {
         Client* client = nullptr;
         Schedule* schedule = nullptr;
-        uint8_t passengers = 0;
+        int passengers = 0;
         bookingDate = time(0);
         cancelledDate = time(NULL);
         BookingPayInfo* bookingPayInfo = nullptr;
@@ -22,8 +22,8 @@ namespace tdc::domain::entities {
         string _id,
         Client* _client, 
         Schedule* _schedule, 
-        uint8_t _passengers, 
-        vector<uint8_t> _seats,
+        int _passengers, 
+        vector<int> _seats,
         time_t _bookingDate,
         Passenger** _passengersInfo,
         BookingPayInfo* _bookingPayInfo,
@@ -45,8 +45,8 @@ namespace tdc::domain::entities {
     string Booking::getId() { return id; };
     Client* Booking::getClient() { return client; };
     Schedule* Booking::getSchedule() { return schedule; };
-    uint8_t Booking::getPassengers() { return passengers; };
-    vector<uint8_t> Booking::getSeats() { return seats; };
+    int Booking::getPassengers() { return passengers; };
+    vector<int> Booking::getSeats() { return seats; };
     time_t Booking::getBookingDate() { return bookingDate; };
     time_t Booking::getCancelledDate() { return cancelledDate; };
     Passenger** Booking::getPassengersInfo() { return passengersInfo; };
@@ -56,8 +56,8 @@ namespace tdc::domain::entities {
     void Booking::setId(string _id) { id = _id; };
     void Booking::setClient(Client* _client) { client = _client; };
     void Booking::setSchedule(Schedule* _schedule) { schedule = _schedule; };
-    void Booking::setPassengers(uint8_t _passengers) { passengers = _passengers; };
-    void Booking::setSeats(vector<uint8_t> _seats) { seats = _seats; };
+    void Booking::setPassengers(int _passengers) { passengers = _passengers; };
+    void Booking::setSeats(vector<int> _seats) { seats = _seats; };
     void Booking::setBookingDate(time_t _bookingDate) { bookingDate = _bookingDate; };
     void Booking::setCancelledDate(time_t _cancelledDate) { cancelledDate = _cancelledDate; };
     void Booking::setPassengersInfo(Passenger** _passengersInfo) { passengersInfo = _passengersInfo; };

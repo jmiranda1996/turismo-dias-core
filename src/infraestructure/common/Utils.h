@@ -7,7 +7,7 @@ using namespace std;
 
 class Utils {
     public:
-        static uint hashFunction(string uuid, uint size);
+        static int hashFunction(string uuid, int size);
         static string timeToString(time_t time);
         static string generateGUUID();
         static string passwordHash(string _password);

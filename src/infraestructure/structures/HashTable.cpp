@@ -16,7 +16,7 @@ using namespace std;
 
 namespace tdc::infraestructure::structures {
     template <typename T>
-    HashTable<T>::HashTable(uint _maxSize) {
+    HashTable<T>::HashTable(int _maxSize) {
         maxSize = _maxSize;
         items = new HashTableItem<T>*[maxSize];
 
@@ -29,7 +29,7 @@ namespace tdc::infraestructure::structures {
     }
 
     template <typename T>
-    T* HashTable<T>::get(uint key) {
+    T* HashTable<T>::get(int key) {
         if (items[key] != nullptr) {
             return items[key]->getValue();
         }
@@ -37,26 +37,26 @@ namespace tdc::infraestructure::structures {
     }
 
     template <typename T>
-    void HashTable<T>::insert(uint key, T* newItem) {
+    void HashTable<T>::insert(int key, T* newItem) {
         HashTableItem<T>* newHashTableItem = new HashTableItem<T>(key, newItem);
         items[key] = newHashTableItem;
         size++;
     }
 
     template <typename T>
-    void HashTable<T>::remove(uint key) {
+    void HashTable<T>::remove(int key) {
         if (key <= maxSize) {
             items[key] = nullptr;
         }
     }
 
     template <typename T>
-    uint HashTable<T>::getSize() {
+    int HashTable<T>::getSize() {
         return size;
     }
 
     template <typename T>
-    uint HashTable<T>::getMaxSize() {
+    int HashTable<T>::getMaxSize() {
         return maxSize;
     }
     

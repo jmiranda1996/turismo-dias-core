@@ -20,9 +20,9 @@ namespace tdc::domain::entities {
         if (_userInfo == nullptr) clientType = Member; 
     };
 
-    uint Client::getPoints() { return points; };
+    int Client::getPoints() { return points; };
     ClientType Client::getClientType() { return clientType; };
 
-    void Client::setPoints(uint _points) { points = _points; };
+    void Client::setPoints(int _points) { points = _points; };
     void Client::setClientType(ClientType _clientType) { clientType = _clientType; }
 };

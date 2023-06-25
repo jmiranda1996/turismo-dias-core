@@ -21,13 +21,13 @@ namespace tdc::infraestructure::structures {
     };
 
     template <typename T>
-    HashTableItem<T>::HashTableItem(uint _key, T* _value) {
+    HashTableItem<T>::HashTableItem(int _key, T* _value) {
         key = _key;
         value = _value;
     };
 
     template <typename T>
-    uint HashTableItem<T>::getKey() {
+    int HashTableItem<T>::getKey() {
         return key;
     }
 
@@ -37,7 +37,7 @@ namespace tdc::infraestructure::structures {
     }
 
     template <typename T>
-    void HashTableItem<T>::setKey(uint _key) {
+    void HashTableItem<T>::setKey(int _key) {
         key = _key;
     }
 

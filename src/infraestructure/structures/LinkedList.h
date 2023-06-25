@@ -22,7 +22,7 @@ namespace tdc::infraestructure::structures {
     class LinkedList {
         private:
             Node<T>* head;
-            uint length;
+            int length;
 
         public:
             LinkedList() {
@@ -30,7 +30,7 @@ namespace tdc::infraestructure::structures {
                 length = 0;
             }
 
-            uint getLength() {
+            int getLength() {
                 return length;
             }
 
@@ -43,12 +43,12 @@ namespace tdc::infraestructure::structures {
                 }
             }
 
-            T elementAt(uint index) {
+            T elementAt(int index) {
                 if (index < 0 || index >= length) {
                     throw out_of_range("Elemento no encontrado");
                 }
                 Node<T>* current = head;
-                for (uint i = 0; i < index; i++) {
+                for (int i = 0; i < index; i++) {
                     current = current->next;
                 }
                 return current->element;

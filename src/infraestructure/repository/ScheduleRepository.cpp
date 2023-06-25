@@ -22,7 +22,7 @@ namespace tdc::infraestructure::repository {
     LinkedList<entities::Schedule> ScheduleRepository::getAll() {
         int maxSize = schedules->getMaxSize();
         LinkedList<entities::Schedule> list;
-        for (uint i = 0; i < maxSize; i++)
+        for (int i = 0; i < maxSize; i++)
         {
             entities::Schedule* Schedule = schedules->get(i);
             if (Schedule != nullptr)
@@ -31,20 +31,20 @@ namespace tdc::infraestructure::repository {
         return list;
     }
 
-    entities::Schedule ScheduleRepository::get(uint key) {
+    entities::Schedule ScheduleRepository::get(int key) {
         return *schedules->get(key);
     }
 
     void ScheduleRepository::insertOrUpdate(entities::Schedule* newEntity) {
-        uint newKey = Utils::hashFunction(newEntity->getId(), schedules->getMaxSize());
+        int newKey = Utils::hashFunction(newEntity->getId(), schedules->getMaxSize());
         schedules->insert(newKey, newEntity);
     }
 
-    void ScheduleRepository::remove(uint key) {
+    void ScheduleRepository::remove(int key) {
         schedules->remove(key);
     }
 
-    uint ScheduleRepository::count() {
+    int ScheduleRepository::count() {
         return schedules->getSize();
     }
 };

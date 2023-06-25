@@ -26,10 +26,10 @@ namespace tdc::infraestructure::repository {
             static AdminRepository *GetInstance();
 
             LinkedList<entities::Admin> getAll();
-            entities::Admin get(uint key);
+            entities::Admin get(int key);
             void insertOrUpdate(entities::Admin* newEntity);
-            void remove(uint key);
-            uint count();
+            void remove(int key);
+            int count();
     };
 };
 

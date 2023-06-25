@@ -26,10 +26,10 @@ namespace tdc::infraestructure::repository {
             static BookingRepository *GetInstance();
 
             LinkedList<entities::Booking> getAll();
-            entities::Booking get(uint key);
+            entities::Booking get(int key);
             void insertOrUpdate(entities::Booking* newEntity);
-            void remove(uint key);
-            uint count();
+            void remove(int key);
+            int count();
     };
 };
 

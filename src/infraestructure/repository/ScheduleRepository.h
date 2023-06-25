@@ -26,10 +26,10 @@ namespace tdc::infraestructure::repository {
             static ScheduleRepository *GetInstance();
 
             LinkedList<entities::Schedule> getAll();
-            entities::Schedule get(uint key);
+            entities::Schedule get(int key);
             void insertOrUpdate(entities::Schedule* newEntity);
-            void remove(uint key);
-            uint count();
+            void remove(int key);
+            int count();
     };
 };
 

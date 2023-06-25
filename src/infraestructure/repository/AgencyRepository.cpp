@@ -22,7 +22,7 @@ namespace tdc::infraestructure::repository {
     LinkedList<entities::Agency> AgencyRepository::getAll() {
         int maxSize = agencies->getMaxSize();
         LinkedList<entities::Agency> list;
-        for (uint i = 0; i < maxSize; i++)
+        for (int i = 0; i < maxSize; i++)
         {
             entities::Agency* Agency = agencies->get(i);
             if (Agency != nullptr)
@@ -31,20 +31,20 @@ namespace tdc::infraestructure::repository {
         return list;
     }
 
-    entities::Agency AgencyRepository::get(uint key) {
+    entities::Agency AgencyRepository::get(int key) {
         return *agencies->get(key);
     }
 
     void AgencyRepository::insertOrUpdate(entities::Agency* newEntity) {
-        uint newKey = Utils::hashFunction(newEntity->getId(), agencies->getMaxSize());
+        int newKey = Utils::hashFunction(newEntity->getId(), agencies->getMaxSize());
         agencies->insert(newKey, newEntity);
     }
 
-    void AgencyRepository::remove(uint key) {
+    void AgencyRepository::remove(int key) {
         agencies->remove(key);
     }
 
-    uint AgencyRepository::count() {
+    int AgencyRepository::count() {
         return agencies->getSize();
     }
 };

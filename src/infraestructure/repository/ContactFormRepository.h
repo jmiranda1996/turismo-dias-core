@@ -26,10 +26,10 @@ namespace tdc::infraestructure::repository {
             static ContactFormRepository *GetInstance();
 
             LinkedList<entities::ContactForm> getAll();
-            entities::ContactForm get(uint key);
+            entities::ContactForm get(int key);
             void insertOrUpdate(entities::ContactForm* newEntity);
-            void remove(uint key);
-            uint count();
+            void remove(int key);
+            int count();
     };
 };
 

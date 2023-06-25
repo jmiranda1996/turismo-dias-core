@@ -21,7 +21,7 @@ namespace tdc::infraestructure::repository {
     LinkedList<Client> ClientRepository::getAll() {
         int maxSize = clients->getMaxSize();
         LinkedList<Client> list;
-        for (uint i = 0; i < maxSize; i++)
+        for (int i = 0; i < maxSize; i++)
         {
             Client* client = clients->get(i);
             if (client != nullptr)
@@ -30,16 +30,16 @@ namespace tdc::infraestructure::repository {
         return list;
     }
 
-    entities::Client ClientRepository::get(uint key) {
+    entities::Client ClientRepository::get(int key) {
         return *clients->get(key);
     }
 
     void ClientRepository::insertOrUpdate(Client* newEntity) {
-        uint newKey = Utils::hashFunction(newEntity->getDocumentId(), clients->getMaxSize());
+        int newKey = Utils::hashFunction(newEntity->getDocumentId(), clients->getMaxSize());
         clients->insert(newKey, newEntity);
     }
 
-    void ClientRepository::remove(uint key) {
+    void ClientRepository::remove(int key) {
         clients->remove(key);
     }
 };

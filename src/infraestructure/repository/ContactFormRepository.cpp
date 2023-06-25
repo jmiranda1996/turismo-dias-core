@@ -22,7 +22,7 @@ namespace tdc::infraestructure::repository {
     LinkedList<entities::ContactForm> ContactFormRepository::getAll() {
         int maxSize = contactForms->getMaxSize();
         LinkedList<entities::ContactForm> list;
-        for (uint i = 0; i < maxSize; i++)
+        for (int i = 0; i < maxSize; i++)
         {
             entities::ContactForm* contactForm = contactForms->get(i);
             if (contactForm != nullptr)
@@ -31,20 +31,20 @@ namespace tdc::infraestructure::repository {
         return list;
     }
 
-    entities::ContactForm ContactFormRepository::get(uint key) {
+    entities::ContactForm ContactFormRepository::get(int key) {
         return *contactForms->get(key);
     }
 
     void ContactFormRepository::insertOrUpdate(entities::ContactForm* newEntity) {
-        uint newKey = Utils::hashFunction(newEntity->getDocumentId(), contactForms->getMaxSize());
+        int newKey = Utils::hashFunction(newEntity->getDocumentId(), contactForms->getMaxSize());
         contactForms->insert(newKey, newEntity);
     }
 
-    void ContactFormRepository::remove(uint key) {
+    void ContactFormRepository::remove(int key) {
         contactForms->remove(key);
     }
 
-    uint ContactFormRepository::count() {
+    int ContactFormRepository::count() {
         return contactForms->getSize();
     }
 };

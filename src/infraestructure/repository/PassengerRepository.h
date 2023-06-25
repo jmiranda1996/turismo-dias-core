@@ -26,10 +26,10 @@ namespace tdc::infraestructure::repository {
             static PassengerRepository *GetInstance();
 
             LinkedList<entities::Passenger> getAll();
-            entities::Passenger get(uint key);
+            entities::Passenger get(int key);
             void insertOrUpdate(entities::Passenger* newEntity);
-            void remove(uint key);
-            uint count();
+            void remove(int key);
+            int count();
     };
 };
 

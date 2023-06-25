@@ -30,7 +30,7 @@ void BookingScreen::render() {
     string returnDate = "";
     int scheduleIndex = 0;
     int passengersQuantity = 0;
-    vector<uint8_t> seats;
+    vector<int> seats;
     int paidMethod = 0;
     int total = 0;
 

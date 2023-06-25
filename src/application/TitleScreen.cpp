@@ -43,7 +43,7 @@ void TitleScreen::load() {
         render();
         cin >> option;
         
-        system("clear");
+        // system("clear");
         switch (option)
         {
             case 1:

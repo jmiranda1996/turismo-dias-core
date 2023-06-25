@@ -9,9 +9,9 @@ namespace tdc::domain::interfaces {
     template <typename T>
     class GenericInterface {
         public:
-            virtual T* get(uint index);
+            virtual T* get(int index);
             virtual void insertOrUpdate(T* newEntity);
-            virtual void remove(uint index);
+            virtual void remove(int index);
     };
 }
 

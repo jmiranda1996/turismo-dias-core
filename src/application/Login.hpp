@@ -39,7 +39,7 @@ class Login {
         cin >> contrasena;
         cout << "\n\n --- LOS DATOS SON CORRECTOS --- " << endl << endl;
         sleep(1);
-        system("clear");
+        // system("clear");
     }
 
 };

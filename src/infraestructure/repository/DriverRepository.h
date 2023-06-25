@@ -26,10 +26,10 @@ namespace tdc::infraestructure::repository {
             static DriverRepository *GetInstance();
 
             LinkedList<entities::Driver> getAll();
-            entities::Driver get(uint key);
+            entities::Driver get(int key);
             void insertOrUpdate(entities::Driver* newEntity);
-            void remove(uint key);
-            uint count();
+            void remove(int key);
+            int count();
     };
 };
 

@@ -22,7 +22,7 @@ namespace tdc::infraestructure::repository {
     LinkedList<entities::Booking> BookingRepository::getAll() {
         int maxSize = bookings->getMaxSize();
         LinkedList<entities::Booking> list;
-        for (uint i = 0; i < maxSize; i++)
+        for (int i = 0; i < maxSize; i++)
         {
             entities::Booking* Booking = bookings->get(i);
             if (Booking != nullptr)
@@ -31,20 +31,20 @@ namespace tdc::infraestructure::repository {
         return list;
     }
 
-    entities::Booking BookingRepository::get(uint key) {
+    entities::Booking BookingRepository::get(int key) {
         return *bookings->get(key);
     }
 
     void BookingRepository::insertOrUpdate(entities::Booking* newEntity) {
-        uint newKey = Utils::hashFunction(newEntity->getId(), bookings->getMaxSize());
+        int newKey = Utils::hashFunction(newEntity->getId(), bookings->getMaxSize());
         bookings->insert(newKey, newEntity);
     }
 
-    void BookingRepository::remove(uint key) {
+    void BookingRepository::remove(int key) {
         bookings->remove(key);
     }
 
-    uint BookingRepository::count() {
+    int BookingRepository::count() {
         return bookings->getSize();
     }
 };

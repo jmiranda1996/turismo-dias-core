@@ -13,22 +13,22 @@ namespace tdc::domain::entities {
     class Bus  {
         private:
             string id;
-            int8_t seats;
+            int seats;
             vector<BusAmenities> amenities;
             ServiceType serviceType;
             Driver* driver;
         public:
             Bus();
-            Bus(string _id, int8_t _seats, vector<BusAmenities> _amenities, ServiceType _serviceType, Driver* _driver);
+            Bus(string _id, int _seats, vector<BusAmenities> _amenities, ServiceType _serviceType, Driver* _driver);
 
             string getId();
-            int8_t getSeats();
+            int getSeats();
             vector<BusAmenities> getAmenities();
             ServiceType getServiceType();
             Driver* getDriver();
 
             void setId(string _id);
-            void setSeats(int8_t _seats);
+            void setSeats(int _seats);
             void setAmenities(vector<BusAmenities> _amenities);
             void setServiceType(ServiceType _serviceType);
             void setDriver(Driver* _driver);

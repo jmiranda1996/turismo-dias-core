@@ -15,11 +15,11 @@ namespace tdc::domain::entities {
         paymentMethod = Card;
     };
     BookingPayInfo::BookingPayInfo(
-        uint _total, 
-        uint _subtotal, 
-        uint _tax, 
+        int _total, 
+        int _subtotal, 
+        int _tax, 
         time_t _paidDate, 
-        uint _billNumber,
+        int _billNumber,
         shared::PaymentMethod _paymentMethod
     ) {
         total = _total;
@@ -29,17 +29,17 @@ namespace tdc::domain::entities {
         paymentMethod = _paymentMethod;
     };
 
-    uint BookingPayInfo::getTotal() { return total; };
-    uint BookingPayInfo::getSubTotal() { return subTotal; };
-    uint BookingPayInfo::getTax() { return tax; };
+    int BookingPayInfo::getTotal() { return total; };
+    int BookingPayInfo::getSubTotal() { return subTotal; };
+    int BookingPayInfo::getTax() { return tax; };
     time_t BookingPayInfo::getPaidDate() { return paidDate; };
-    uint BookingPayInfo::getBillNumber() { return billNumber; };
+    int BookingPayInfo::getBillNumber() { return billNumber; };
     PaymentMethod BookingPayInfo::getPaymentMethod() { return paymentMethod; };
 
-    void BookingPayInfo::setTotal(uint _total) { total = _total; };
-    void BookingPayInfo::setSubTotal(uint _subtotal) { subTotal = _subtotal; };
-    void BookingPayInfo::setTax(uint _tax) { tax = _tax; };
+    void BookingPayInfo::setTotal(int _total) { total = _total; };
+    void BookingPayInfo::setSubTotal(int _subtotal) { subTotal = _subtotal; };
+    void BookingPayInfo::setTax(int _tax) { tax = _tax; };
     void BookingPayInfo::setPaidDate(time_t _paidDate) { paidDate = _paidDate; };
-    void BookingPayInfo::setBillNumber(uint _billNumber) { billNumber = _billNumber; };
+    void BookingPayInfo::setBillNumber(int _billNumber) { billNumber = _billNumber; };
     void BookingPayInfo::setPaymentMethod(shared::PaymentMethod _paymentMethod) { paymentMethod = _paymentMethod; };
 };
