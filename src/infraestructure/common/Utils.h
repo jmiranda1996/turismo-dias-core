@@ -10,6 +10,8 @@ class Utils {
         static uint hashFunction(string uuid, uint size);
         static string timeToString(time_t time);
         static string generateGUUID();
+        static string passwordHash(string _password);
+        static bool validatePassword(string _password, string _passwordHash);
 };
 
 #endif

@@ -25,7 +25,7 @@ void ProfileScreen::render() {
         drawnContent("Correo: " + Global::client->getEmailAddress(), false, ANSI_COLOR_GREEN);
         drawnContent("Nombres: " + Global::client->getUserInfo()->getFirstName(), false, ANSI_COLOR_GREEN);
         drawnContent("Apellidos: " + Global::client->getUserInfo()->getPhoneNumber(), false, ANSI_COLOR_GREEN);
-        drawnContent("Puntos acumulados: " + Global::client->getPoints(), false, ANSI_COLOR_GREEN);
+        drawnContent("Puntos acumulados: " + to_string(Global::client->getPoints()), false, ANSI_COLOR_GREEN);
     }
     else if (Global::admin != nullptr) {
         drawnContent("Usuario: " + Global::admin->getUsername(), false, ANSI_COLOR_GREEN);

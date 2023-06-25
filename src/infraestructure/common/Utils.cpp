@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <functional>
 #include "Utils.h"
+#include "bcrypt.h"
 
 using namespace std;
 
@@ -51,4 +52,13 @@ string Utils::generateGUUID()
         ss << (hex.length() < 2 ? '0' + hex : hex);
     }        
     return ss.str();
+}
+
+//referencia: https://github.com/trusch/libbcrypt
+string Utils::passwordHash(string _password) {
+    return bcrypt::generateHash(_password);
+}
+
+bool Utils::validatePassword(string _password, string _passwordHash) {
+    return bcrypt::validatePassword(_password, _passwordHash);
 }

@@ -24,7 +24,7 @@ void TitleScreen::render() {
     drawnContent("", false, ANSI_COLOR_GREEN);
     drawnContent("1. Ingresar como invitado", false, ANSI_COLOR_GREEN);
     drawnContent("2. Iniciar sesion", false, ANSI_COLOR_GREEN);
-    drawnContent("3. Registrase", false, ANSI_COLOR_GREEN);
+    drawnContent("3. Registrate", false, ANSI_COLOR_GREEN);
     drawnContent("4. Salir", false, ANSI_COLOR_GREEN);
     drawnContent("", false, ANSI_COLOR_GREEN);
     drawnContent("Escoge una opcion:", false, ANSI_COLOR_GREEN);

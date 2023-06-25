@@ -10,6 +10,7 @@
 #include "../domain/shared/UserInfo.h"
 #include "../infraestructure/repository/ClientRepository.h"
 #include "../infraestructure/structures/LinkedList.h"
+#include "../infraestructure/common/Utils.h"
 
 using namespace std;
 using namespace tdc::domain::entities;
@@ -41,7 +42,9 @@ void SignInScreen::render() {
 
     for (int i = 0; i < clients.getLength(); i++)
     {
-        if (clients.elementAt(i).getPasswordHash() == password) {
+        Client client = clients.elementAt(i);
+        bool validHash = Utils::validatePassword(password, client.getPasswordHash());
+        if (client.getUsername() == username && validHash) {
             Global::isLogin = true;
             Client client = clients.elementAt(i);
             Global::client = &client;

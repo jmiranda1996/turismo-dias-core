@@ -11,7 +11,7 @@
 #include "../infraestructure/repository/ClientRepository.h"
 // #include "../infraestructure/repository/ScheduleRepository.h"
 // #include "../infraestructure/structures/LinkedList.h"
-// #include "../infraestructure/common/Utils.h"
+#include "../infraestructure/common/Utils.h"
 
 using namespace std;
 using namespace tdc::domain::entities;
@@ -89,7 +89,8 @@ void SignUpScreen::render() {
     entity->setPoints(0);
     entity->setStatus(Active);
     entity->setUsername(username);
-    entity->setPasswordHash(password);
+    string passwordHash = Utils::passwordHash(password);
+    entity->setPasswordHash(passwordHash);
     entity->setEmailAddress(email);
     UserInfo* userInfo = new UserInfo();
     userInfo->setFirstName(firtName);
@@ -101,7 +102,7 @@ void SignUpScreen::render() {
     ClientRepository* repository = ClientRepository::GetInstance();
     repository->insertOrUpdate(entity);
 
-    prompt = "Registro realizada con exito!";
+    prompt = "Registro realizado con exito!";
     drawnContent(prompt, true, ANSI_COLOR_YELLOW);
 
     drawnContent(" ", false, ANSI_COLOR_GREEN);
