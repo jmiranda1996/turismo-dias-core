@@ -9,6 +9,7 @@ class Utils {
     public:
         static uint hashFunction(string uuid, uint size);
         static string timeToString(time_t time);
+        static string generateGUUID();
 };
 
 #endif

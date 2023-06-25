@@ -2,7 +2,7 @@
 #include <string>
 #include <stdlib.h>
 
-#include "./application/title-screen.h"
+#include "./application/TitleScreen.h"
 #include "./infraestructure/common/DataManager.h"
 
 using namespace std;

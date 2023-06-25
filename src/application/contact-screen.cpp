@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <iomanip>
 #include <stdlib.h>
+#include "Colors.h"
 #include "contact-screen.h"
 #include "../domain/entities/ContactForm.h"
 #include "../domain/shared/Enums.h"
@@ -12,11 +13,11 @@ using namespace tdc::domain;
 using namespace tdc::domain::shared;
 using namespace tdc::infraestructure::repository;
 
-const string ANSI_COLOR_YELLOW = "\x1b[33m";
-const string ANSI_STYLE_BOLD = "\x1b[1m";
-const string ANSI_COLOR_RESET = "\x1b[0m";
-const string ANSI_COLOR_BLUE = "\x1b[34m";
-const string ANSI_COLOR_RED = "\x1b[31m";
+// const string ANSI_COLOR_YELLOW = "\x1b[33m";
+// const string ANSI_STYLE_BOLD = "\x1b[1m";
+// const string ANSI_COLOR_RESET = "\x1b[0m";
+// const string ANSI_COLOR_BLUE = "\x1b[34m";
+// const string ANSI_COLOR_RED = "\x1b[31m";
 
 void ContactScreen::drawnBorder() {
     cout << setfill( '*' ) << setw(screenWidth) << '*' <<  endl;

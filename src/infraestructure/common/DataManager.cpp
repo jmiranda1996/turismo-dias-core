@@ -185,11 +185,11 @@ namespace tdc::infraestructure::common {
                             break;
                         }
                         case 5: {
-                            entity->setBookingDate(stol(word)); 
-                            bookingPayInfo->setPaidDate(stol(word));
+                            entity->setBookingDate(stol(word)/1000); 
+                            bookingPayInfo->setPaidDate(stol(word)/1000);
                             break;
                         };
-                        case 6: entity->setCancelledDate(stol(word)); break;
+                        case 6: entity->setCancelledDate(stol(word)/1000); break;
                         case 7: bookingPayInfo->setTotal(stoi(word)); break;
                         case 8: bookingPayInfo->setBillNumber(stoi(word)); break;
                         default: break;
@@ -407,8 +407,8 @@ namespace tdc::infraestructure::common {
                         case 0: entity->setId(word); break;
                         case 1: entity->setFrom(word); break;
                         case 2: entity->setTo(word); break;
-                        case 3: entity->setDepartureDate(stol(word)); break;
-                        case 4: entity->setReturnDate(stol(word)); break;
+                        case 3: entity->setDepartureDate(stol(word)/1000); break;
+                        case 4: entity->setReturnDate(stol(word)/1000); break;
                         case 5: entity->setPrice(stoi(word)); break;
                         case 6: {
                             uint key = Utils::hashFunction(word, 50000);
