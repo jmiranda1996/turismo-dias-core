@@ -49,9 +49,9 @@ void ReportsScreen::render() {
 void ReportsScreen::load() {
     int option = 0;
 
-    if (!Global::isLogin || Global::admin == nullptr) {
+    if (!Global::isLogin) { //|| Global::admin == nullptr) {
         drawnContent("Debe iniciar sesion como administrador para ver los reportes", true, ANSI_COLOR_RED);
-        // return;
+        return;
     }
 
     BookingRepository* bookingRepository = BookingRepository::GetInstance();

@@ -8,6 +8,8 @@
 #include "Colors.h"
 #include "TitleScreen.h"
 #include "MainScreen.h"
+#include "SignUpScreen.h"
+#include "SignInScreen.h"
 
 using namespace std;
 
@@ -48,12 +50,16 @@ void TitleScreen::load() {
                 MainScreen::load();
                 break;
             case 2:
-                MainScreen::load();
+                SignInScreen::load();
+                if (Global::isLogin) {
+                    MainScreen::load();
+                }
                 break;
             case 3:
-                MainScreen::load();
+                SignUpScreen::load();
+                break;
             default:
-                cout << "Esa opcion no es valida";
+                cout << "Esa opcion no es valida" << endl;
                 break;
         }
     } while (option != 4);
