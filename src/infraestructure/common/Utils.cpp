@@ -54,11 +54,12 @@ string Utils::generateGUUID()
     return ss.str();
 }
 
-//referencia: https://github.com/trusch/libbcrypt
+//https://github.com/hilch/Bcrypt.cpp
 string Utils::passwordHash(string _password) {
     return bcrypt::generateHash(_password);
 }
 
+//https://github.com/hilch/Bcrypt.cpp
 bool Utils::validatePassword(string _password, string _passwordHash) {
     return bcrypt::validatePassword(_password, _passwordHash);
 }
