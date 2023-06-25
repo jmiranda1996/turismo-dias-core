@@ -4,6 +4,11 @@
 #include "Colors.h"
 #include "MainScreen.h"
 #include "BookingScreen.h"
+#include "ServicesScreen.hpp"
+#include "ContactScreen.h"
+#include "ProfileScreen.h"
+#include "BookingsHistoryScreen.h"
+#include "ReportsScreen.h"
 
 using namespace std;
 
@@ -33,17 +38,26 @@ void MainScreen::load() {
         render();
         cin >> option;
         
-        system("clear");
         switch (option)
         {
             case 1:
                 BookingScreen::load();
                 break;
             case 2:
-                // MainScreen::Mostrar_menu();
+                ServicesScreen::load();
                 break;
             case 3:
-                // MainScreen::Mostrar_menu();
+                ContactScreen::load();
+                break;
+            case 4:
+                ProfileScreen::load();
+                break;
+            case 5:
+                BookingsHistoryScreen::load();
+                break;
+            case 6:
+                ReportsScreen::load();
+                break;
             default:
                 cout << "Esa opcion no es valida" << endl;
                 break;

@@ -267,7 +267,7 @@ namespace tdc::infraestructure::common {
             while(getline(file, line))
             {
                 int i = 0;
-                entities::Client* entity = new entities::Client();
+                Client* entity = new Client();
                 stringstream str(line);
                 uint key;
                 while(getline(str, word, ',')) {
@@ -286,7 +286,7 @@ namespace tdc::infraestructure::common {
                 }
                 entity->setUserInfo(nullptr);
                 entity->setStatus(Active);
-                entity->setClientType(User);
+                entity->setClientType(Member);
                 repository->insertOrUpdate(entity);
             }
         }

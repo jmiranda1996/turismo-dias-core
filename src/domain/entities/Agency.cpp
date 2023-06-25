@@ -32,12 +32,12 @@ namespace tdc::domain::entities {
     };
 
     string Agency::getId() { return id; };
-    string Agency::getAddress() { return id; };
-    string Agency::getZipCode() { return id; };
-    string Agency::getCountry() { return id; };
-    string Agency::getPhoneNumber() { return id; };
-    string Agency::getCity() { return id; };
-    string Agency::getTerminalName() { return id; };
+    string Agency::getAddress() { return address; };
+    string Agency::getZipCode() { return zipCode; };
+    string Agency::getCountry() { return country; };
+    string Agency::getPhoneNumber() { return phoneNumber; };
+    string Agency::getCity() { return city; };
+    string Agency::getTerminalName() { return terminalName; };
 
     void Agency::setId(string _id) { id = _id; };
     void Agency::setAddress(string _address) { address = _address; };

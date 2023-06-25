@@ -5,7 +5,7 @@
 #include "../../domain/entities/Client.h"
  
 using namespace std;
-using namespace tdc::domain;
+using namespace tdc::domain::entities;
 using namespace tdc::infraestructure::structures;
 
 namespace tdc::infraestructure::repository {
@@ -18,13 +18,13 @@ namespace tdc::infraestructure::repository {
         return singleton;
     }
 
-    LinkedList<entities::Client> ClientRepository::getAll() {
+    LinkedList<Client> ClientRepository::getAll() {
         int maxSize = clients->getMaxSize();
-        LinkedList<entities::Client> list;
+        LinkedList<Client> list;
         for (uint i = 0; i < maxSize; i++)
         {
-            entities::Client* client = clients->get(i);
-            if (clients != nullptr)
+            Client* client = clients->get(i);
+            if (client != nullptr)
                 list.insert(*client);
         }
         return list;
@@ -34,7 +34,7 @@ namespace tdc::infraestructure::repository {
         return *clients->get(key);
     }
 
-    void ClientRepository::insertOrUpdate(entities::Client* newEntity) {
+    void ClientRepository::insertOrUpdate(Client* newEntity) {
         uint newKey = Utils::hashFunction(newEntity->getDocumentId(), clients->getMaxSize());
         clients->insert(newKey, newEntity);
     }

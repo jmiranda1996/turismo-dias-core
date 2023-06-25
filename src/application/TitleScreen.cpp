@@ -4,6 +4,7 @@
 #include <vector>
 #include <iomanip>
 #include <stdlib.h>
+#include "Global.h"
 #include "Colors.h"
 #include "TitleScreen.h"
 #include "MainScreen.h"
@@ -31,6 +32,10 @@ void TitleScreen::render() {
 };
  
 void TitleScreen::load() {
+    Global::isLogin = false;
+    Global::admin = nullptr;
+    Global::client = nullptr;
+
     int option = 0;
     do {
         render();

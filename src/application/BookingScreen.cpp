@@ -53,7 +53,7 @@ void BookingScreen::render() {
 
     drawnContent("Resultado de busqueda:", true, ANSI_COLOR_YELLOW);
     drawnContent("", false, ANSI_COLOR_YELLOW);
-    drawnContent("Nro\tOrigen\tDestino\tSalida\tPrecio", false, ANSI_COLOR_GREEN);
+    drawnContent("Nro\tOrigen\tDestino\tSalida\tTotal", false, ANSI_COLOR_GREEN);
     drawnContent("___\t______\t_______\t______\t______", false, ANSI_COLOR_GREEN);
     ScheduleRepository* _scheduleRepository = ScheduleRepository::GetInstance();
     LinkedList<Schedule> schedules = _scheduleRepository->getAll();

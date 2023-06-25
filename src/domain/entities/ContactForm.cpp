@@ -40,6 +40,7 @@ namespace tdc::domain::entities {
         agency = _agency;
     }
 
+    string ContactForm::getId() { return id; };
     string ContactForm::getDocumentId() { return documentId; };
     DocumentType ContactForm::getDocumentType() { return documentType; };
     string ContactForm::getFirstName() { return firstName; };
@@ -50,6 +51,7 @@ namespace tdc::domain::entities {
     string ContactForm::getReason() { return reason; };
     Agency* ContactForm::getAgency() { return agency; };
 
+    void ContactForm::setId(string _id) { id = _id; }
     void ContactForm::setDocumentId(string _documentId) { documentId = _documentId; };
     void ContactForm::setDocumentType(DocumentType _documentType) { _documentType = documentType; };
     void ContactForm::setFirstName(string _firstName) { firstName = _firstName; };

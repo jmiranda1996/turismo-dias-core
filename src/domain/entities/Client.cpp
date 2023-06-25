@@ -16,8 +16,8 @@ namespace tdc::domain::entities {
         string _emailAddress, 
         UserInfo* _userInfo
     ): User(_documentId, _documentType, _username, _emailAddress, _userInfo) {
-        ::User::userType = ::Client;
-        if (_userInfo == nullptr) clientType = Guest; 
+        ::User::userType = ::Customer;
+        if (_userInfo == nullptr) clientType = Member; 
     };
 
     uint Client::getPoints() { return points; };

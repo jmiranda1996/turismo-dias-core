@@ -11,6 +11,7 @@ using namespace tdc::domain::shared;
 namespace tdc::domain::entities {
     class ContactForm {
         private:
+            string id;
             string documentId;
             DocumentType documentType;
             string firstName;
@@ -34,6 +35,7 @@ namespace tdc::domain::entities {
                 Agency* _agency = nullptr
             );
 
+            string getId();
             string getDocumentId();
             DocumentType getDocumentType();
             string getFirstName();
@@ -44,6 +46,7 @@ namespace tdc::domain::entities {
             string getReason();
             Agency* getAgency();
 
+            void setId(string _id);
             void setDocumentId(string _documentId);
             void setDocumentType(DocumentType _documentType);
             void setFirstName(string _firstName);
